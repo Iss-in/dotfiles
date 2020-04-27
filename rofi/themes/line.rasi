@@ -1,0 +1,83 @@
+configuration {
+  modi: "drun";
+
+  click-to-exit: true;
+  show-icons: true;
+  cycle: false;
+  sidebar-mode: false;
+  m: "-1";
+  hide-scrollbar: true;
+  scroll-method: 0;
+  drun-display-format: " {name}";
+  m: "primary";
+}
+
+* {
+  font: "DejaVu Sans Mono 9";
+
+  text-color: #ffffff;
+  text-color-selected: #333639;
+
+  background-color: transparent;
+
+  transparent-dark: #333639;
+  element-alternate-shading: #333639;
+  element-selected-color: #FFFFFF;
+}
+
+#window {
+  location: south;
+  width: 100%;
+  transparency: "background";
+}
+
+#mainbox {
+  orientation: horizontal;
+  spacing: 0;
+}
+
+#inputbar {
+  children: [prompt, entry];
+  width: 10%;
+  spacing: 0;
+}
+
+#prompt {
+  color: #5CD68F;
+  highlight: bold orange;
+  format: bold;
+
+  background-color: #333639;
+  padding: 10px 15px 11px 15px;
+}
+
+#entry {
+  padding: 10px 15px 11px 15px;
+  background-color: #333639;
+}
+
+#listview {
+  spacing: 0;
+  // TODO: replace with `layout: horizontal;` when element width calculation is fixed
+  columns: 10;
+  lines: 1;
+}
+
+#element {
+  padding: 10px 15px;
+  spacing: 0;
+}
+
+#element selected {
+  background-color: #333639;
+  text-color: white;
+}
+
+#element-icon {
+  size: 16;
+}
+
+#element-text {
+  size: 16;
+  vertical-align : 0.5;
+}

@@ -1,0 +1,15 @@
+configuration {
+	show-icons: true;
+	//drun-display-format: " {name}";
+	cycle: false;
+	sidebar-mode: false;
+	m: "primary";
+	hide-scrollbar: true;
+	scroll-method: 0;
+	click-to-exit: true;
+	theme: "~/.config/rofi/themes/line.rasi";
+	//theme: "~/.cache/wal/colors-rofi-dark.rasi";
+	kb-cancel: "Escape,Control+g,Alt+F1";
+	//modi: "drun,run";
+	display-drun:                   "";
+}

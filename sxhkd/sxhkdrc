@@ -1,0 +1,134 @@
+## Launch terminal
+super + Return
+	kitty
+
+## Drawing terminal
+super + shift + Return
+	urdraw
+
+super + a
+	bspc node @/ -R 90	
+
+## Launch Rofi start menu
+alt + F1
+	rofi -modi "drun,run" -show drun 
+		#n30f rofi2.png -x 682 -y 290 -d && rofi -modi "drun,run" -show drun && killall n30f
+
+
+alt + F2
+	hideIt.sh --name dropdown --toggle
+
+super + l
+	blurlock
+
+## Launch common apps
+super + shift + {f,w,g}
+	{thunar,firefox,geany}
+super + n
+	nautilus -w
+	
+super + x
+	xpad -t
+
+## Take a screenshot
+Print
+	scrot 'Screenshot_%y.%m.%d_%H.%M.%S.png' \
+	-e 'mv $f ~/Pictures/screenshots/ ; viewnior ~/Pictures/screenshots/$f'
+	#	scrot '%F_%H-%M-%S.png' -e 'mv $f ~/Pictures/screenshots/ ' && notify-send 'Screenshot captured'
+
+	
+## Volume control
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+	amixer {-q set Master 5%+,-q set Master 5%-,set Master toggle}
+	
+## Music control
+XF86Audio{Next,Prev,Play,Stop}
+	mpc {next,prev,toggle,stop}
+
+## Show now-playing
+super + m
+	notify-send "Now Playing ♫" "$(mpc current)"
+
+## Make sxhkd reload its configuration files
+super + s
+	pkill -USR1 -x sxhkd
+
+## Quit bspwm normally
+super + control + Escape
+	killall vanela; bspc quit
+
+## Reload bspwm config
+super + shift + r
+	killall vanela; bspwmrc
+
+## Close or kill app
+super + {_,shift + }c
+	bspc node {-c,-k}
+
+## Close app (common way)
+ctrl + space
+	bspc node -c
+
+## Fullscreen / Monocle
+super + f
+	bspc node -t \~fullscreen
+
+super + {left,right}
+    bspc node -t {pseudo_tiled,tiled}
+	bspc node -a  rectangle=1880x500+0+0
+
+	
+## Split horizontal, split vertical, or cancel
+super + {h,v,r}
+	bspc node -p {east,south,cancel}
+
+## Toggle beetwen floating & tiled
+super + space
+    bspc node -t "~"{floating,tiled} 
+
+## Pseudo Tiled & tiled mode
+super + {p,t}
+    bspc node -t {pseudo_tiled,tiled}
+
+## Send the window to another edge of the screen
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+## Change focus to next window, including floating window
+alt + {_,shift + }Tab
+	bspc node -f {next.local,prev.local}
+
+## Switch workspace
+ctrl + alt + {Left,Right}
+	bspc desktop -f {prev.local,next.local}
+
+## Switch to last opened workspace
+super + grave
+	skippy-xd 
+	
+## Send focused window to another workspace
+super + {_,shift + }{1-6}
+	bspc {desktop -f,node -d} '^{1-6}'
+
+alt + {1-4,5}
+		bspc desktop -f {I,II,III,IV,V}
+
+		# desktop='^{1-6}'; \
+		# bspc query -D -d "$desktop.focused" && bspc desktop -f last || bspc desktop -f "$desktop"
+
+## Expanding windows
+super + control + {Left,Right,Up,Down}
+	bspc node -z {left -20 20,right 20 0,top 0 -20,bottom 0 20}
+	
+## Shrinking windows
+super + alt + {Left,Right,Up,Down}
+	bspc node -z {left 20 0,right -20 0,top 0 20,bottom 0 -20}
+	
+## Move floating windows
+alt + shift + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+super + s
+	bspc window -t floating; \
+    bspc window -t sticky
+

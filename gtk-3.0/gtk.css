@@ -1,0 +1,113 @@
+VteTerminal, vte-terminal {
+padding: 30px;
+}
+
+
+
+.nautilus-window {
+  background-image: linear-gradient(to right, #444249, #1f2636);
+  background-size: 548px ;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+}
+
+
+
+/*
+.nautilus-window placessidebar.sidebar {
+    border-radius: 13px;
+    margin-right: 6px;
+    background-image: linear-gradient(to right, #444249, #1f2636);
+    background-size: 548px 548px 148px 148px auto;
+
+    /*box-shadow: inset 0 4px 54px #492a2a;*/
+}
+
+
+
+
+.nautilus-window headerbar {
+  background-image: linear-gradient(to right, #46434a, #1f2636);ki
+
+  background-size: 48px auto;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  padding-left: 54px;
+  box-shadow: inset 0 1px rgba(219, 220, 222, 0.1);
+}
+
+  
+  /*ENTIRE HEADER BAR */
+
+
+  
+
+  /*.nautilus-window headerbar .path-bar-box {
+    background-image: linear-gradient(to bottom, #dbdcde, #dbdcde);
+    background-size: auto auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 100px;
+    padding-left: 22px;
+    margin-left: 6px;
+    margin-right: 6px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.12);
+  }
+  ADDRESS BAR */
+
+
+
+
+row image.sidebar-icon {
+   /* background-color: #ff0000;*/
+    color : #fff;
+
+  }
+  
+  row:selected image.sidebar-icon {
+   /* background-color: #ffff00;*/
+     color : #009FC2;
+  }
+
+
+
+/*headerbar button:disabled:not(.suggested-action):not(.destructive-action), actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification button:disabled, .nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:disabled, .nemo-window .toolbar button:disabled,
+button.flat:disabled {
+  box-shadow: none;
+  background-color: #00ffff;
+  color: #dbdcde;
+}
+*/
+
+
+
+button.titlebutton.close {
+  background-color: #009FC2;
+  color: #009FC2;
+}
+
+button.titlebutton.maximize {
+  background-color: #009FC2;
+  color: #009FC2;
+}
+
+button.titlebutton.minimize {
+  background-color: #009FC2;
+  color: #009FC2;
+}
+
+button.titlebutton.minimize:hover {
+  background-color: #009FC2;
+  color: #009FC2;
+}
+
+
+
+
+
+.nautilus-window paned > separator {
+
+  background-size: 0px;
+
+}
+
