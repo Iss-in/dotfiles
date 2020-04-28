@@ -1,0 +1,96 @@
+--# _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ 
+--#         ______            __        
+--#        / ____/___  ____  / /____  __
+--#       / /   / __ \/ __ \/ //_/ / / /
+--#      / /___/ /_/ / / / / ,< / /_/ / 
+--#      \____/\____/_/ /_/_/|_|\__, /  
+--#                             /____/   
+--#_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+    conky.config = {
+
+    background = true,
+    own_window = true,
+    own_window_type = 'normal',
+    own_window_transparent = true,
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    own_window_colour = '#000000',
+    own_window_class = 'Conky',
+
+    minimum_width = 300, 
+    minimum_height = 100,
+    maximum_width = 820,
+    maximum_height = 120,
+
+    gap_x = 0,--## left | right
+    gap_y = 40,--## up | down
+
+    alignment = 'bottom_right',
+
+    --### End Window Settings  ###
+
+
+    --###      Font Settings   ###
+    use_xft = true,
+    font = 'IBM Plex Sans Italic:size=10',
+
+    xftalpha = 1,
+    override_utf8_locale = true,
+
+    uppercase = false,
+
+
+
+    draw_shades = false,--yes
+    default_shade_color = 'black',
+
+    draw_outline = false,-- amplifies text if yes
+    default_outline_color = 'black',
+
+    default_color = '#ffffff',-- PureWhite
+    color0 = '#40e0d0',-- cyan
+    color1 = '#778899',-- LightSlateGray
+    color2 = '#D8BFD8',-- Thistle
+    color3 = '#9ACD32',-- YellowGreen
+    color4 = '#FFA07A',-- LightSalmon
+    color5 = '#FFDEAD',-- NavajoWhite
+    color6 = '#00BFFF',-- DeepSkycyan
+    color7 = '#5F9EA0',-- Cadetcyan
+    color8 = '#BDB76B',-- DarkKhaki
+    color9 = '#CD5C5C',-- IndianRed
+    color10 = '#FF0000',-- IndianRedd
+
+    draw_borders = false,
+    -- Stippled borders?
+    stippled_borders = 5,
+    -- border margins
+    border_inner_margin = 0,
+    border_outer_margin = 0,
+    -- border width
+    border_width = 0,
+    -- graph borders
+    draw_graph_borders = true,--no
+  
+
+    use_spacer = 'none',
+    --text_buffer_size 6144
+
+    no_buffers = true,
+
+    short_units = true,
+    pad_percents = 2,
+    imlib_cache_size = 0,
+    double_buffer = true,
+
+  
+
+
+    --################  End Miscellaneoulus Section  ###
+
+    update_interval = 1,
+    };
+
+    conky.text = [[
+    ${image ~/task.png -p 0,0 -s 300x112}\
+    ${color #fff}${offset 20}${voffset 14}${font IBM Plex Sans:Italic:size=13}${execpi 1440 quote | sed 's/\(\(\w\w*\W*\)\{10\}\)/\1\n            /g'  }
+    ]];
